@@ -29,3 +29,8 @@ variable "vm_userpassword" {
 variable "build_id" {
     default = "1"
 }
+
+variable "jar_path" {
+    default = format("/home/Azureagent/myagent/spc_work/%s/s/target/*.jar", var.build_id)
+}
+

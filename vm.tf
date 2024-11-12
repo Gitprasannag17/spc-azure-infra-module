@@ -46,6 +46,12 @@ resource "null_resource" "deployapp" {
       
     }
 
+    provisioner "file" {
+      source        = var.jar_path
+      destination   = "/tmp/spc.jar" 
+      
+    }
+
     provisioner "remote-exec" {
         inline = [
           "chmod +x /tmp/deploy.sh",
