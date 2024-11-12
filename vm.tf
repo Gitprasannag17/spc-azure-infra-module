@@ -47,7 +47,7 @@ resource "null_resource" "deployapp" {
     }
 
     provisioner "file" {
-      source        = var.jar_path
+      source        = format("/home/Azureagent/myagent/spc_work/%s/s/target/*.jar", var.build_id)
       destination   = "/tmp/spc.jar" 
       
     }
