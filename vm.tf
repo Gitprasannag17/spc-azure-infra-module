@@ -47,7 +47,7 @@ resource "null_resource" "deployapp" {
     }
 
     provisioner "file" {
-      source        = format("/home/Azureagent/myagent/spc_work/%s/s/target/spring-petclinic-3.3.0-SNAPSHOT.jar", var.build_id)
+      source        = "/home/Azureagent/myagent/spc_work/1/s/target/spring-petclinic-3.3.0-SNAPSHOT.jar"
       destination   = "/tmp/spc.jar" 
       
     }
