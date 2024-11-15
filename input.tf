@@ -27,6 +27,6 @@ variable "vm_userpassword" {
 }
 
 variable "build_id" {
-    default = "0"
+    default = "1"
 }
 
