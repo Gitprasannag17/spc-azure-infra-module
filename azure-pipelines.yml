@@ -15,7 +15,7 @@ jobs:
           scriptLocation: inlineScript
           inlineScript: |
             # Install Terraform (optional if not using UseTerraform task)
-            cd ~/spc-azure-infra-module
+            cd ~/myagent/spc_work/2/s
             terraform --version
             terraform init  # Initialize Terraform working directory
             terraform apply -auto-approve -var="build_id=$(Build.BuildId)" # Apply the configuration without interactive approval
