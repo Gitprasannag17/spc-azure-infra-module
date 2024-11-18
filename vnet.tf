@@ -85,7 +85,7 @@ resource "azurerm_network_interface" "nic" {
     resource_group_name = local.rg_name
     location = var.region_name
     ip_configuration {
-        name = "spc_nic_ip"
+        name = "spc_nic_private_ip"
         private_ip_address_allocation = "Dynamic"
         subnet_id = azurerm_subnet.subnet[0].id
         public_ip_address_id = azurerm_public_ip.public-ip.id
