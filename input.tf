@@ -23,7 +23,7 @@ variable "vm_username" {
 }
 
 variable "vm_userpassword" {
-    default = "Azureuser*123"
+    default = "Azureuser*12"
 }
 
 variable "build_id" {
