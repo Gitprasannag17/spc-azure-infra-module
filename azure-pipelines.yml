@@ -1,0 +1,23 @@
+trigger:
+- main
+jobs:
+  - job: "Release"          
+    pool:
+      default
+
+    steps:      
+      - checkout: self
+      - task: AzureCLI@2
+        displayName: 'Terraform Init and Apply'
+        inputs:
+          azureSubscription: 'arm-service-connection'  # Azure service connection name
+          scriptType: bash
+          scriptLocation: inlineScript
+          inlineScript: |
+            # Install Terraform (optional if not using UseTerraform task)
+            cd ~/spc-azure-infra-module
+            terraform --version
+            terraform init  # Initialize Terraform working directory
+            terraform apply -auto-approve -var="build_id=$(Build.BuildId)" # Apply the configuration without interactive approval
+          displayName: 'Run terraform init and apply'
+          failOnStandardError: true    
